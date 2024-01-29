@@ -4,6 +4,8 @@ public Id insertCourse(String name, String details, Integer credits) {
     course.Name = name;
     course.apxio__Course_Details__c= details;
     course.apxio__Credits__c = String.valueOf(credits);
+    if(credits != null){
     insert course;
+    }
     return course.id;
 }
