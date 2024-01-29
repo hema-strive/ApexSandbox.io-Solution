@@ -1,0 +1,8 @@
+public String aOrAn(String word) {
+    //code here
+    if(word.startsWith(a)){
+      return an ;
+    }else{
+        return a;
+    }
+}
