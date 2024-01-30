@@ -1,6 +1,7 @@
 public String aOrAn(String word) {
     //code here
-    if(word.startsWith('a', 'e','i','o','u')){
+    List<String> vo = {'a', 'e','i','o','u'};
+    if(word.startsWith(vo)){
       return 'an ' + word;
     }else{
         return 'a ' + word;
