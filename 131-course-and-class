@@ -1,29 +1,19 @@
 public void createCourseAndClass(String name, String description) {
     // code here
-    apxio__Course__c course = new apxio__Course__c ();
+   apxio__Course__c course = new apxio__Course__c();
     course.Name = name;
-    course.apxio__Course_Details__c = description;
-    insert course;
+    course.apxio__Course_Details__c = description; // Directly set the description
+    insert course; // Insert the course record into the database
 
-    List<apxio__Course__c> courses = [select Id, Name from apxio__Course__c];
- 
-   List<apxio__Class__c> classes = new List<apxio__Class__c>();
+    // Create a Class record for the newly created course
+    apxio__Class__c classRecord = new apxio__Class__c();
+    classRecord.apxio__Course__c = course.Id; // Associate the class with the course
+    classRecord.Name = course.Name; // Use the course name for the class
 
-    
-   for(apxio__Course__c c : courses){
-       apxio__Class__c class = new apxio__Class__c();
-       class.apxio__Course__c = c.Id;
-       class.Name = c.Name;
-       String desc = c.description;
-       if(desc.length()>255){
-           desc = desc.substring(0,255);
-          
-       }
-       class.apxio__Description__c = desc;
-       classes.add(class);
-   }
-   insert classes;
+    // Truncate the description if it's longer than 255 characters
+    String classDescription = description.length() > 255 ? description.substring(0, 255) : description;
+    classRecord.apxio__Description__c = classDescription; // Set the possibly truncated description
 
-   
-
+    // Insert the class record into the database
+    insert classRecord;
 }
