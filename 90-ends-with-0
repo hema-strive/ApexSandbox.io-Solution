@@ -1,7 +1,7 @@
 public Boolean isEndWithZero(Integer num){
      //code here
      String numStr = String.valueOf(num);
-     if(numStr.endsWith(0)){
+     if(numStr.endsWith('zero')){
          return true;
      }else{
          return false;
