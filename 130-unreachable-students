@@ -2,7 +2,7 @@ public List<apxio__Student__c> selectUnreachableStudents() {
     // code here
    List<apxio__Student__c> students = new List<apxio__Student__c>();
 
-       if(apxio__Student__c.apxio__Email__c == null ){
+       if(apxio__Student__c.apxio__Email__c == null && apxio__Student__c.apxio__Email__c == null){
         students = [SELECT Id, Name, apxio__Phone__c, apxio__Email__c, apxio__Active__c 
                     FROM apxio__Student__c 
                    WHERE ( apxio__Active__c = true )  
