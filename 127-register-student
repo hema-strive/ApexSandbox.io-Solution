@@ -5,7 +5,7 @@ public String registerStudent(String name, String phone, String email) {
     stu.apxio__Email__c = email;
     stu.apxio__Phone__c = phone;
     insert stu;
-     stu = [select Id, Name, apxio__Phone__c, apxio__Email__c,apxio__Registration_Number__c from apxio__Student__c where Id =: stu.Id limit 1];
+     stu = [select Id, Name, apxio__Phone__c, apxio__Email__c,apxio__Registration_Number__c from apxio__Student__c  limit 1];
      retun stu.apxio__Registration_Number__c;
 
 }
