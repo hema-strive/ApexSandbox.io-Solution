@@ -11,7 +11,9 @@ public void createCourseAndClass(String name, String description) {
     classRecord.Name = course.Name; // Use the course name for the class
 
     // Truncate the description if it's longer than 255 characters
-    String classDescription = description.length() > 255 ? description.substring(0, 255) : description;
+    if (description != null && description.length() > 255) {
+        description = description.substring(0, 255); // Truncate if longer than 255 characters
+    }
     classRecord.apxio__Description__c = classDescription; // Set the possibly truncated description
 
     // Insert the class record into the database
