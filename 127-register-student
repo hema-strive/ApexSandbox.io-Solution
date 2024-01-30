@@ -7,6 +7,6 @@ public String registerStudent(String name, String phone, String email) {
     
     insert stu;
      String stu1 = 'select apxio__Registration_Number__c from apxio__Student__c where Id =: stu.Id ';
-     return string.valueOf(stu1.apxio__Registration_Number__c );
+     return stu1;
 
 }
