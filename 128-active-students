@@ -5,6 +5,8 @@ public List<apxio__Student__c> selectActiveStudents() {
       
     } 
     return students;
-  
+    else{
+        return null;
+    }
     }
 
