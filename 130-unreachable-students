@@ -3,8 +3,7 @@ public List<apxio__Student__c> selectUnreachableStudents() {
    List<apxio__Student__c> students = new List<apxio__Student__c>();
 
      if(apxio__Student__c.apxio__Phone__c == null && apxio__Student__c.apxio__Email__c == null ) {
-        students = [SELECT Id, Name, apxio__Phone__c, apxio__Email__c, apxio__Active__c = true
-                    FROM apxio__Student__c                    
+        students = [SELECT Id, Name, apxio__Phone__c, apxio__Email__c
                     ORDER BY Name ASC];
                    
      }  return students;
