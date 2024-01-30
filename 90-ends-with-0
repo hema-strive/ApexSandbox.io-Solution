@@ -1,6 +1,7 @@
 public Boolean isEndWithZero(Integer num){
      //code here
-     if(Math.mod(num).endsWith(0)){
+     String numStr = String.valueOf(num);
+     if(numStr.endsWith(0)){
          return true;
      }else{
          return false;
