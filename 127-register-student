@@ -7,6 +7,6 @@ public String registerStudent(String name, String phone, String email) {
     
     insert stu;
      List<apxio__Student__c> student = [select Id, Name, apxio__Phone__c, apxio__Email__c,apxio__Registration_Number__c from apxio__Student__c  ];
-     retun student[0].apxio__Registration_Number__c ;
+     retun 'student[0].apxio__Registration_Number__c' ;
 
 }
