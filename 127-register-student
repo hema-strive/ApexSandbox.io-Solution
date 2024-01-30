@@ -5,5 +5,5 @@ public String registerStudent(String name, String phone, String email) {
     stu.apxio__Email__c = email;
     stu.apxio__Phone__c = phone;
     insert stu;
-    stu.apxio__Registration_Number__c=[select apxio__Registration_Number__c from apxio__Student__c where Name ='stu'].get[0] ;
+    stu.apxio__Registration_Number__c=[select apxio__Registration_Number__c from apxio__Student__c where Name ='stu' limit 1];
 }
