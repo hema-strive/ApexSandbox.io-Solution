@@ -1,7 +1,7 @@
 public List<apxio__Student__c> selectUnreachableStudents() {
     // code here
-    if(apxio__Student__c.Name !=null && apxio__Student__c.apxio__Active__c = true){
-        List<apxio__Student__c> students = [select Id, Name from apxio__Student__c where (apxio__Student__c.apxio__Phone__c== null && apxio__Student__c.apxio__Email__c== null ) order by name asc];
+    if(apxio__Student__c.Name !=null && apxio__Student__c.apxio__Active__c == true){
+        List<apxio__Student__c> students = [select Id, Name from apxio__Student__c where (apxio__Student__c.apxio__Phone__c == null && apxio__Student__c.apxio__Email__c == null ) order by name asc];
         return students;
     }else{
         return null;
