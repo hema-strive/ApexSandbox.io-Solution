@@ -16,7 +16,7 @@ public void createCourseAndClass(String name, String description) {
        class.Name = c.Name;
        String desc = c.description;
        if(desc.length()>255){
-           desc = desc.subString(0,255);
+           desc = desc.substring(0,255);
           
        }
        class.apxio__Description__c = desc;
