@@ -5,17 +5,25 @@ public void createCourseAndClass(String name, String description) {
     course.apxio__Course_Details__c = description;
     insert course;
 
-    String desc = description;
-      if (desc.length() > 255) {
-    // If it is, only keep the first 255 characters
-    desc = desc.substring(0, 255);
-}
+    List<apxio__Course__c> courses = [select Id, Name,apxio__Course_Details__c from apxio__Course__c];
+ 
+   List<apxio__Class__c> classes = new List<apxio__Class__c>();
 
-    apxio__Class__c class = new apxio__Class__c ();
-    class.apxio__Course__c = course.Id;
-    class.Name = name;
-  
-    class.apxio__Description__c = desc;
-    insert class;
+    
+   for(apxio__Course__c c : courses){
+       apxio__Class__c class = new apxio__Class__c();
+       class.apxio__Course__c = c.Id;
+       class.Name = c.Name;
+       String desc = c.description;
+       if(desc.length()>255){
+           desc = desc.subString(0,255);
+          
+       }
+       class.apxio__Description__c = desc;
+       classes.add(class);
+   }
+   insert classes;
+
+   
 
 }
