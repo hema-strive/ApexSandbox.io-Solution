@@ -7,6 +7,7 @@ public void createCourseAndClass(String name, String description) {
 
     apxio__Class__c class = new apxio__Class__c ();
     class.apxio__Course__c = course.Id;
+    class.Name = name;
     if (description.length() > 255) {
     // If it is, only keep the first 255 characters
     description = description.substring(0, 255);
