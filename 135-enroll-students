@@ -11,6 +11,7 @@ public void enrollStudents(List<String> emails, String className) {
        enrolllist.add(enroll);
         
     }
+    }
     insert enrollList;
 
 }
