@@ -2,7 +2,7 @@ public void enrollStudents(List<String> emails, String className) {
     // code here
     list<apxio__Student__c> stuList= [select id, Name from apxio__Student__c where apxio__Email__c IN: emails];
     List<apxio__Class__c> cl = [ select id from apxio__Class__c where Name =: className];
-    List<apxio__Class_Enrollment__c> enrollList = new apxio__Class_Enrollment__c();
+    List<apxio__Class_Enrollment__c> enrollList = new List<apxio__Class_Enrollment__c>();
     if(!stuList.isEmpty()){
         for(apxio__Student__c stu: stuList){
        apxio__Class_Enrollment__c enroll = new apxio__Class_Enrollment__c();
