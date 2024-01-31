@@ -1,0 +1,12 @@
+public Id classFromCourse(String courseName) {
+    // code here
+    if(apxio__Course__c != null){
+        apxio__Class__c class = new apxio__Class__c();
+        class.apxio__Course__c = apxio__Course__c.Id;
+        class.Name = courseName;
+        insert class;
+        return class.Id;
+    }else{
+        return null;
+    }
+}
