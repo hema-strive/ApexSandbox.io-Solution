@@ -1,9 +1,10 @@
 public Id classFromCourse(String courseName) {
     // code here
-    if(apxio__Course__c.Id != null){
+    apxio__Course__c course = [Select id, Name from apxio__Course__c Where Name =:courseName];
+    if(course.Id != null){
         apxio__Class__c class = new apxio__Class__c();
-        class.apxio__Course__c = apxio__Course__c.Id;
-        class.Name = courseName;
+        class.apxio__Course__c = course.Id;
+        class.Name = course.Name;
         insert class;
         return class.Id;
     }else{
