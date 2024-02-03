@@ -3,12 +3,12 @@ public String divide(Integer a, Integer b){
     try{
         if (b == null) {
                 // Handle the case where b is null
-                throw new NullPointerException('Attempt to de-reference a null object');
-            }
+               return 'Divide by 0';
+            }else{
     
     Integer result = a / b;
     return String.valueOf(result);
-    
+            }
     }catch (ArithmeticException e) {
             // Use getMessage() to obtain the exception message and return it
             return e.getMessage;
