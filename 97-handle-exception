@@ -7,7 +7,7 @@ public String divide(Integer a, Integer b){
             }else if(a == null || b== null){
                throw new NullPointerException('Attempt to de-reference a null object');
             }
-            else if{
+            else if (a != null && b != null){
     
     Integer result = (a / b);
     return String.valueOf(result);
