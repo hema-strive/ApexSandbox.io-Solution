@@ -14,4 +14,3 @@ public String divide(Integer a, Integer b){
         }
         // No need for a generic catch block for other exceptions in this specific context
     }
-}
