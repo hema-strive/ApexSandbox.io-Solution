@@ -1,6 +1,10 @@
 public String divide(Integer a, Integer b){
     //code here
     try{
+        if (b == null) {
+                // Handle the case where b is null
+                throw new NullPointerException('Attempt to de-reference a null object');
+            }
     
     Integer result = a / b;
     return String.valueOf(result);
