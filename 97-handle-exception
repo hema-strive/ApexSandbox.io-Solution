@@ -4,7 +4,10 @@ public String divide(Integer a, Integer b){
         if (b == null) {
                 // Handle the case where b is null
                return 'Divide by 0';
-            }else{
+            }else if(a == null){
+               throw new NullPointerException('Attempt to de-reference a null object');
+            }
+            else if{
     
     Integer result = a / b;
     return String.valueOf(result);
