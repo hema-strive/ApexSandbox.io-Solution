@@ -8,7 +8,7 @@ public String divide(Integer a, Integer b){
             // Perform division
             Integer result = a / b;
             return String.valueOf(result);
-        } catch (ArithmeticException e) {
+        } catch (Exception e) {
             // Handle division by zero
             return 'Divide by 0';
         }
