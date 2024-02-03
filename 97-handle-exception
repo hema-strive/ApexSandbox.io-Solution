@@ -1,13 +1,20 @@
 public String divide(Integer a, Integer b){
     //code here
-    try{
-       
-            if (a != null && b != null){
-    
-    Integer result = (a / b);
-    return String.valueOf(result);
+    try {
+            // Check for null inputs first to prevent NullPointerException
+            if (a == null || b == null) {
+                throw new NullPointerException('Attempt to de-reference a null object');
             }
-    }catch (ArithmeticException e) {
-            // Use getMessage() to obtain the exception message and return it
-            return e.getMessage;
+            // Perform division
+            Integer result = a / b;
+            return String.valueOf(result);
+        } catch (ArithmeticException e) {
+            // Handle division by zero
+            return 'Divide by 0';
+        } catch (Exception e) {
+            // Handle any other exceptions, including null inputs
+            return e.getMessage();
+        }
+    }
 }
+   
