@@ -9,7 +9,7 @@ public String divide(Integer a, Integer b){
             }
             else if{
     
-    Integer result = a / b;
+    Integer result = (a / b);
     return String.valueOf(result);
             }
     }catch (ArithmeticException e) {
