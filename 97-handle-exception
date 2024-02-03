@@ -1,20 +1,17 @@
 public String divide(Integer a, Integer b){
     //code here
-    try {
-            // Check for null inputs first to prevent NullPointerException
-            if (a == null || b == null) {
-                throw new NullPointerException('Attempt to de-reference a null object');
-            }
+   if (a == null || b == null) {
+            return 'Attempt to de-reference a null object';
+        }
+        
+        try {
             // Perform division
             Integer result = a / b;
             return String.valueOf(result);
         } catch (ArithmeticException e) {
             // Handle division by zero
             return 'Divide by 0';
-        } catch (Exception e) {
-            // Handle any other exceptions, including null inputs
-            return e.getMessage();
         }
+        // No need for a generic catch block for other exceptions in this specific context
     }
-
-   
+}
